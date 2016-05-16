@@ -1,0 +1,27 @@
+<section id="categories" class="row">
+    <div id="category-container" class="container-fluid">
+        <h3 style="margin-bottom: 40px;">Categories</h3>
+        <div class="col-md-12">
+            <div ng-repeat="item in categories" class="col-md-3 center">
+                <input ng-click="filterOnCategories()" id="cateryOption_{{item.id}}" ng-model="categoryOptions[item.id]" name="category-option" ng-checked="true" type="checkbox">
+                &nbsp;&nbsp;<label for="cateryOption_{{item.id}}">{{ item.category }}</label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="row">
+    <div style="margin-left: 100px;" class="container-fluid">
+        <h4>Search through our products</h4>
+        <div ng-repeat="item in products" class="col-md-2">
+            <img ng-src="{{ item.image }}" alt="" class="img-thumbnail">
+            <span><strong>Name:</strong> {{ item.name }}</span><br />
+            <span><strong>Color:</strong> {{ item.color }}</span><br/>
+            <span><strong>Price:</strong> {{ item.price | currency: " $ " }}</span><br />
+            <span><strong>Stock:</strong> {{ item.stock }}</span><br />
+
+            <button id="get-details-btn" class="btn btn-info" ng-click="goToDetails(item.id)">Get details...</button>
+        </div>
+    </div>
+</section>
+

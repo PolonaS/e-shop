@@ -1,0 +1,9 @@
+<div class="input-group col-md-6" style="text-align: center">
+    <input ng-change="onChange(applicationForm)" type="text" class="form-control" uib-datepicker-popup="d.M.y" ng-model="date" is-open="opened"/>
+    <span class="input-group-btn color-me">
+        <button type="button" class="btn btn-default" ng-click="open($event)">
+            <i class="glyphicon glyphicon-calendar"></i></button>
+    </span>
+</div>
+
+<p><span class="text-muted">Date: </span>{{ date }}</p>

@@ -1,0 +1,27 @@
+.red-message {
+    color: red;
+}
+
+.green-message {
+    color: limegreen;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #00EA89;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+
+#order-btn {
+    background-color: #C12283;
+    border: none;
+}
+
+#order-btn:hover,
+#order-btn:active,
+#order-btn:focus {
+    background-color: purple;
+    border: none;
+}

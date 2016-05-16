@@ -1,0 +1,14 @@
+<div>
+    <div style="height: 300px">
+        <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <uib-slide ng-repeat="item in slides track by $index" index="item.index">
+                <div class="carousel-caption">
+                    <h3>{{ item.name }}</h3>
+                    <p>This product has a special offer of -30%!</p>
+                    <img id="front-img" ng-src="{{ item.image }}" alt="" class="img-thumbnail" style="width: 140px">
+                    <p><button id="onsale-btn" class="btn btn-lg btn-info" ng-click="goToDetails(item.id)" role="button">Find out more...</button></p>
+                </div>
+            </uib-slide>
+        </uib-carousel>
+    </div>
+</div>

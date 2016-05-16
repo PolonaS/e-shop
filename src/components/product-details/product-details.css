@@ -1,0 +1,15 @@
+#addto-basket-button {
+    background-color: #C12283;
+    border: none;
+}
+
+#addto-basket-button:hover,
+#addto-basket-button:active,
+#addto-basket-button:focus {
+    background-color: purple;
+    border: none;
+}
+
+.color-red {
+    color: red;
+}

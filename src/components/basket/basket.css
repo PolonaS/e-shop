@@ -1,0 +1,50 @@
+#basket-row {
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+#basket-row2 {
+    margin-bottom: 50px;
+}
+
+#basket-data,
+#basket-data2{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom:5px;
+}
+
+#basket-btn, #checkout-btn, #preview-btn {
+    padding: 10px 15px;
+    background-color: #C12283;
+    border: none;
+}
+
+#basket-btn:hover,
+#basket-btn:active,
+#basket-btn:focus,
+#checkout-btn:hover,
+#checkout-btn:active,
+#checkout-btn:focus,
+#preview-btn:hover,
+#preview-btn:active,
+#preview-btn:focus {
+    background-color: purple;
+    border: none;
+}
+
+#checkout-btn,
+#preview-btn {
+    float: right;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+#total .container div {
+    border-bottom: 2px solid gainsboro;
+}
+
+#total p {
+    font-size: 1.3em;
+}

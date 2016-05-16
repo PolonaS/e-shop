@@ -1,0 +1,35 @@
+<section ng-repeat="item in basket" id="basket-row" class="row">
+    <div class="container">
+        <h4>Explore your basket</h4>
+        <div id="basket-data" class="col-md-11">
+            <div class="col-md-4"><strong>Name</strong></div>
+            <div class="col-md-4"><strong>Quantity</strong></div>
+            <div class="col-md-4"><strong>Price</strong></div>
+
+            <div class="col-md-4">{{ item.product.name }}</div>
+            <div class="col-md-4">{{ item.quantity }}</div>
+            <div class="col-md-4">{{ item.product.price * (item.quantity) | currency: "$" }}</div>
+
+        </div>
+        <div class="col-md-1">
+            <button id="basket-btn" ng-click="deleteProduct(item.product.id)" class="btn btn-info">Delete</button>
+        </div>
+    </div>
+</section>
+
+<section id="total" class="row">
+    <div class="container">
+        <div class="col-md-11">
+            <p><strong>Total:</strong></p>
+        </div>
+
+        <div class="col-md-1">
+            <p><strong>{{ sumAllProducts() }}</strong></p>
+        </div>
+
+        <!-- Modal -->
+
+        <button id="checkout-btn"  ng-click="goToPurchaseForm()" class="btn btn-info">Proceed to checkout</button>
+        <button id="preview-btn"  ng-click="previewBasket()" class="btn btn-info">Preview</button>
+    </div>
+</section>

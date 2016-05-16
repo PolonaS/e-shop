@@ -1,0 +1,23 @@
+<section id="product" class="row" >
+    <div class="container">
+        <div class="col-md-6">
+            <h3>{{ product.name }} ({{ product.brand }}) </h3>
+            <p><strong>Category</strong> {{ isCategory(product.categoryId) }}</p>
+            <p><strong>Color:</strong> {{ product.color }}</p>
+            <p><strong>Stock:</strong> {{ isOnStock(product.stock) }}</p>
+            <p><strong>Sale:</strong>  <span ng-class="{'color-red' : product.onSale == true }">{{ isOnSale(product.onSale) }}</span></p>
+            <p><strong>Available:</strong> {{ isAvailable(product.availableOn) }}</p>
+            <p><strong>Price:</strong> {{ product.price | currency: "$"}}</p>
+            <p style="text-align: justify"><strong>Description:</strong> {{ product.description }}</p>
+            <p><strong>Quantity:&nbsp&nbsp</strong><input ng-model="quantity" style="width: 40px;" type="text" class="form-inline"></p>
+
+            <button id="addto-basket-button" ng-click="addToBasket(product, quantity)" class="btn btn-info">Add to basket</button>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-md 12">
+                <img ng-src="{{ product.image }}" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</section>

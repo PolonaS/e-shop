@@ -1,0 +1,177 @@
+<section class="row">
+    <div class="container">
+        <div class="col-md-12">
+            <h1>Order now</h1>
+            <p class="lead">Fill in the input fields below and order your product.</p>
+            <!-- <a ng-click="tab = 1" href=""><span>Spletna stran</span></a> | <a ng-click="tab = 2" href=""><span>AngularJS obrazec</span></a> | <a ng-click="tab = 3" href=""><span>svetovanje</span></a>-->
+
+            <!--  -->
+            <div class="panel">
+                <form name="applicationForm" ng-model="applicationForm" class="form-horizontal" role="form">
+
+                    <!-- FIRST NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.firstname.$invalid && applicationForm.firstname.$dirty, 'has-success' : applicationForm.firstname.$valid && applicationForm.firstname.$dirty}">
+                        <span class="control-label col-sm-3 color-me">First name</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="firstname"
+                                   ng-model="firstName"
+                                   ng-required="true"
+                                   ng-minlength="3"
+                                   ng-maxlength="15"
+                                   ng-pattern="/^[A-z]+$/"
+
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="First name">
+                            <!--<span>Error: {{ applicationForm.name.$error  }}</span>
+                            <span>Valid: {{ applicationForm.name.$valid  }}</span>-->
+                            <!--<pre>{{ name }}</pre>-->
+
+                            <span class="red-message" ng-if="applicationForm.firstname.$error.pattern">Only letter allowed.</span>
+                            <span class="red-message" ng-if="applicationForm.firstname.$error.minlength">A minimum of 3 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.firstname.$error.maxlength">A maximum of 15 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.firstname.$error.required && applicationForm.firstname.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.firstname.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+                    <!-- LAST NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.surname.$invalid && applicationForm.surname.$dirty, 'has-success' : applicationForm.surname.$valid && applicationForm.surname.$dirty}">
+                        <span class="control-label col-sm-3 color-me">Last name</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="surname"
+                                   ng-model="lastName"
+                                   ng-required="true"
+                                   ng-minlength="3"
+                                   ng-maxlength="15"
+                                   ng-pattern="/^[A-z]+$/"
+
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Last name">
+                            <span class="red-message" ng-if="applicationForm.surname.$error.pattern">Only letter allowed.</span>
+                            <span class="red-message" ng-if="applicationForm.surname.$error.minlength">A minimum of 3 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.surname.$error.maxlength">A maximum of 15 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.surname.$error.required && applicationForm.surname.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.surname.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.email.$invalid && applicationForm.email.$dirty, 'has-success' : applicationForm.email.$valid && applicationForm.email.$dirty}">
+                        <span class="control-label col-sm-3 color-me">E-mail</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="email"
+                                   ng-model="email"
+                                   ng-required="true"
+                                   ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"
+                                   class="form-control"
+                                   placeholder="E-mail">
+                            <span class="red-message" ng-if="applicationForm.email.$error.required && applicationForm.email.$dirty">Enter data.</span>
+                            <span class="red-message" ng-if="applicationForm.email.$error.pattern">Email should look like: mail@mail.com</span>
+                            <span class="green-message" ng-if="applicationForm.email.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+                    <!-- SHIPPING ADDRESS -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.address.$invalid && applicationForm.address.$dirty, 'has-success' : applicationForm.address.$valid && applicationForm.address.$dirty}">
+                        <span class="control-label col-sm-3 color-me">Shipping address</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="address"
+                                   ng-model="address"
+                                   ng-required="true"
+                                   ng-minlength="7"
+                                   ng-maxlength="100"
+                                   class="form-control"
+                                   placeholder="Shipping address">
+                            <span class="red-message" ng-if="applicationForm.address.$error.minlength">A minimum of 7 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.address.$error.maxlength">A maximum of 30 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.address.$error.required && applicationForm.address.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.address.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+                    <!-- COUNTRY -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.country.$invalid && applicationForm.country.$dirty, 'has-success' : applicationForm.country.$valid && applicationForm.country.$dirty}">
+                        <span class="control-label col-sm-3 color-me">Country</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="country"
+                                   ng-model="country"
+                                   ng-required="true"
+                                   ng-minlength="5"
+                                   ng-maxlength="100"
+                                   class="form-control"
+                                   placeholder="Country">
+                            <span class="red-message" ng-if="applicationForm.country.$error.minlength">A minimum of 5 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.country.$error.maxlength">A maximum of 30 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.country.$error.required && applicationForm.country.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.country.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+
+                    <!-- CITY -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.city.$invalid && applicationForm.city.$dirty, 'has-success' : applicationForm.city.$valid && applicationForm.city.$dirty}">
+                        <span class="control-label col-sm-3 color-me">City</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="city"
+                                   ng-model="city"
+                                   ng-required="true"
+                                   ng-minlength="4"
+                                   ng-maxlength="100"
+                                   class="form-control"
+                                   placeholder="City">
+                            <span class="red-message" ng-if="applicationForm.city.$error.minlength">A minimum of 4 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.city.$error.maxlength">A maximum of 15 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.city.$error.required && applicationForm.city.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.city.$valid">Correct.</span>
+                        </div>
+                    </div>
+
+                    <!-- ZIP -->
+                    <div class="form-group" ng-class="{ 'has-error' : applicationForm.zip.$invalid && applicationForm.zip.$dirty, 'has-success' : applicationForm.zip.$valid && applicationForm.zip.$dirty}">
+                        <span class="control-label col-sm-3 color-me">Zip</span>
+                        <div class="col-sm-4">
+                            <input ng-change="onChange(applicationForm)"
+                                   name="zip"
+                                   ng-model="zip"
+                                   ng-required="true"
+                                   ng-pattern="/^[0-9]+$/"
+                                   ng-minlength="4"
+                                   ng-maxlength="15"
+                                   class="form-control"
+                                   placeholder="Zip">
+                            <span class="red-message" ng-if="applicationForm.zip.$error.pattern">Only numbers allowed.</span>
+                            <span class="red-message" ng-if="applicationForm.zip.$error.minlength">A minimum of 4 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.zip.$error.maxlength">A maximum of 15 characters.</span>
+                            <span class="red-message" ng-if="applicationForm.zip.$error.required && applicationForm.zip.$dirty">Enter data.</span>
+                            <span class="green-message" ng-if="applicationForm.zip.$valid">Correct.</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Datepicker -->
+                    <app-datepicker ng-required="true" ng-change="onChange(applicationForm)" ng-model="date"></app-datepicker>
+
+                    <!-- Timepicker -->
+                    <uib-timepicker ng-required="true" ng-change="onChange(applicationForm)" ng-model="time" hour-step="1" minute-step="15" show-seconds="true" show-meridian="false"></uib-timepicker>
+
+                    <p><span class="text-muted">Time: </span> {{ timepicker }}</p>
+
+
+
+                  <!-- <p> Form: {{ applicationForm.$valid }} </p>-->
+                    <!--<div class="col-md-7"><button class="btn btn-default">Pošlji</button></div>.-->
+                </form>
+
+            </div>
+            <button id="order-btn" ng-click="sendData()" class="btn btn-info">Order now</button>
+        </div>
+    </div>
+</section>
